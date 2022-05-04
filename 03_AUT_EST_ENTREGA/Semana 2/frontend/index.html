@@ -1,22 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8" />	
-	<title>currículo</title>
-	<style>
-		.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 10%;
-  border-radius: 100%;
-}
-	</style>
-</head>
-<body style="background-color:cornflowerblue">
+
+	<link rel="stylesheet" href="csscurrículo.css">
+	<meta charset="UTF-8" content="width=device-width, initial-scale=1.0," />	
 	
-	<h1 style="text-align:center">Alberto Da Rocha Miranda </h1>
-	<img src="https://voceconcursado.com.br/wp-content/uploads/2018/02/foto-generica.jpg" alt="minha foto" class="center">
+	<title>currículo</title>
+	
+</head>
+<body>
+	
+	<h1>Alberto Da Rocha Miranda </h1>
+	<img src="https://voceconcursado.com.br/wp-content/uploads/2018/02/foto-generica.jpg" alt="minha foto" class="center" id="titulo">
 	<hr>
 
 	<div>
@@ -49,6 +44,14 @@
 		<h2>Email</h2>
 		<p>email: <a href="mailto:alberto.miranda@sou.inteli.edu.br">alberto.miranda@sou.inteli.edu.br</a></p>
 	</div>
+
+	<SCRIPT>
+		var oi= function() {
+			alert("ola, bem vindo ao meu currículo")
+		}
+		document.getElementById("titulo").onclick = oi
+	
+	</SCRIPT>
 	 
 </body>
 </html>
