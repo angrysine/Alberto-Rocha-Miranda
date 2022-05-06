@@ -2,42 +2,56 @@
 <html>
 <head>
 
+	<link rel="stylesheet" href="csscurrículo.css">
 	<meta charset="UTF-8" content="width=device-width, initial-scale=1.0," />	
 	
 	<title>currículo</title>
 	
 </head>
 <body>
-
-
-	<h3>Calcule o tempo de subida e altura máxima de um lançamento vertical</h3>
-	<label>ensira o valor da gravidade:</label><br>
-	<input type="text" id="gravidade" placeholder="ensira valor" for="gravidade"> <br> <br>
-	<label>ensira a velocidade inicial:</label> <br>
-	<input type="text" id="velocidade" placeholder="ensira valor" for="velocidade"> <br> <br>
-	<button type="button" onclick="main()">calcular </button> <br> <br> 
-	<div id ="new"></div>
-
 	
-	
-	<script>
-		function main() {
-			let gravidade  = document.getElementById("gravidade").value
-			let velocidade = document.getElementById("velocidade").value
-			let tempo = velocidade/gravidade
-			let altura = velocidade*velocidade/gravidade
-			let texto =  "A altura é "  + altura + " o tempo é " + tempo
-			var tag = document.createElement("p");
-   			var text = document.createTextNode(texto);
-   			tag.appendChild(text);
-   			var element = document.getElementById("new");
-   			element.appendChild(tag);
-			
+	<h1>Alberto Da Rocha Miranda </h1>
+	<img src="https://voceconcursado.com.br/wp-content/uploads/2018/02/foto-generica.jpg" alt="minha foto" class="center" id="titulo">
+	<hr>
 
+	<div>
+		<h2>
+			Sobre
+		</h2>
+		<p>Nasci em Petrópolis, em 2002, e estudei até minha adolescência no colégio Ipiranga.Sempre tive muita afinidade pelas ciências exatas principalmente pela parte de matemática. Em 2018,buscando me desafiar intelectualmente, me mudei para o Rio de Janeiro para fazer um curso preparatório de Ime-Ita.Ao receber bolsa integral no Farias Brito , em 2019, me mudei para o Ceara. Fui aprovado no ime e no ita em 2021, porém decidi entrar no Inteli por acreditar no ensino por projetos baseado em experiências de mercado   </p>
+
+		<h2>Atividades extracurriculares</h2>
+		<ul>
+			<li>certificado de Proficiency Cambrige</li>
+			<li>Curso preparatório Ime-ita Pensi </li>
+			<li>Criação da Liga de mercado financeiro Inteli</li>
+			<li> </li>
+		</ul>
+
+		<h2>Formação</h2>
+		<ol>
+			<li>Colégio Ipiranga Pétropolis 2004-2018 </li>
+			<li>Bolsista de 70% Pensi da  barra Tijuca 2019 </li>
+			<li>Bolsista integral no Farias Brito 2020</li>
+		</ol>
+
+	</div>
+
+	<div>
+		<hr>
+		<h2>Informações de contato </h2>
+		<a href="https://br.linkedin.com/in/alberto-da-rocha-miranda-614315232?trk=public_profile_browsemap">linkedin</a>
+		<h2>Email</h2>
+		<p>email: <a href="mailto:alberto.miranda@sou.inteli.edu.br">alberto.miranda@sou.inteli.edu.br</a></p>
+	</div>
+
+	<SCRIPT>
+		var oi= function() {
+			alert("ola, bem vindo ao meu currículo")
 		}
-		
-		  
-
-	</script>	 
+		document.getElementById("titulo").onclick = oi
+	
+	</SCRIPT>
+	 
 </body>
 </html>
