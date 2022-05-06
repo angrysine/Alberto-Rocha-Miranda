@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8" content="width=device-width, initial-scale=1.0," />	
+	
+	<title>currículo</title>
+	
+</head>
+<body>
+
+
+	<h3>Calcule o tempo de subida e altura máxima de um lançamento vertical</h3>
+	<label>ensira o valor da gravidade:</label><br>
+	<input type="text" id="gravidade" placeholder="ensira valor" for="gravidade"> <br> <br>
+	<label>ensira a velocidade inicial:</label> <br>
+	<input type="text" id="velocidade" placeholder="ensira valor" for="velocidade"> <br> <br>
+	<button type="button" onclick="main()">calcular </button> <br> <br> 
+	<div id ="new"></div>
+
+	
+	
+	<script>
+		function main() {
+			let gravidade  = document.getElementById("gravidade").value
+			let velocidade = document.getElementById("velocidade").value
+			let tempo = velocidade/gravidade
+			let altura = velocidade*velocidade/gravidade
+			let texto =  "A altura é "  + altura + " o tempo é " + tempo
+			var tag = document.createElement("p");
+   			var text = document.createTextNode(texto);
+   			tag.appendChild(text);
+   			var element = document.getElementById("new");
+   			element.appendChild(tag);
+			
+
+		}
+		
+		  
+
+	</script>	 
+</body>
+</html>
