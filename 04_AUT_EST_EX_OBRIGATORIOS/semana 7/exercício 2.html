@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>exercío 1</title>
+    </head>
+
+    <body>
+      <input type="text" id="1">
+      <input type="text" id="2">
+      <button onclick="trocar()">troca</button>
+    </body> 
+    <script>
+        function trocar() {
+          let temp = document.getElementById("1").value
+          document.getElementById("1").value = document.getElementById("2").value
+          document.getElementById("2").value = temp
+        }
+    </script>
+</html>

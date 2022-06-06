@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>exercío 3</title>
+    </head>
+
+    <body>
+        <p>ensira um número de telefone para verificar se ele esta em um formato válido: (xx)xxxxxxxxx</p>
+        <br>
+      <input type="text" id="1">
+      <button onclick="verificar()">verificar validade</button>
+      <div id="aqui"></div>
+    </body> 
+    <script>
+
+        const valid = ["0","1","2","3","4","5","6","7","8","9","(",")"]
+
+        function vf() {
+            while ( document.getElementById("aqui").firstChild) {
+                document.getElementById("aqui").removeChild( document.getElementById("aqui").lastChild)
+            }
+               
+            const tag = document.createElement("p")
+            const text = document.createTextNode("formato inválido")
+            tag.appendChild(text)
+            document.getElementById("aqui").appendChild(tag)
+        }
+        function vc() {
+            while ( document.getElementById("aqui").firstChild) {
+                document.getElementById("aqui").removeChild( document.getElementById("aqui").lastChild)
+            }
+            const tag = document.createElement("p")
+            const text = document.createTextNode("formato válido")
+            tag.appendChild(text)
+            document.getElementById("aqui").appendChild(tag)}
+
+        function verificar() {
+            let element = document.getElementById("1")
+            let cel = element.value
+            let size = cel.length
+            let i = 0
+
+            if (!(size ==13) ) {
+               return vf()
+            }
+            
+            if (!(cel[0] =="(")) {
+                return vf()
+            }
+
+            if (!(cel[3] ==")")) {
+                return vf()
+            }
+
+            while (i < size) {
+                if (!(valid.includes(cel[i]))) {
+                    console.log("oi")
+                    return vf()
+                }
+                i +=1
+            }
+
+            vc()
+        }
+    </script>
+</html>

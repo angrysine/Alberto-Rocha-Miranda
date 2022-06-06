@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8" content="width=device-width, initial-scale=1.0," />	
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<title>currículo</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<style>
+		.center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		}
+
+		#page-body {
+			background-color:#faf6d0;
+			font-family:Arial, Helvetica, sans-serif;
+		}
+		#imagem-perfil {
+			height: 8rem;
+			width: 	8rem; 
+			margin-top: 2rem;
+			border-radius: 100%;
+			margin-left: 5.2rem;
+		}
+		.label {
+			margin-top: 10px;
+			margin-left: 6.5rem;
+		}
+		
+		#left-bar {
+			background-color:#0b5cb3 ;
+			color: aliceblue;
+		}
+		#card {
+			margin-top:1rem ; 
+			height: 45rem;
+		}
+		#meu-nome {
+			text-align: center;
+			margin-top: 2.5rem;
+		}
+		#l1,#l2,#l3,#l4,#l5 {
+			height:2rem;
+			width:2rem;
+			margin-top: 45px;
+			margin-left: 8.5rem;
+			border-radius:10%
+		}
+		#link1,#link2,#link3,#link4 {
+			color: white;
+		}
+		label {
+			margin-left: 8.2rem;
+		}
+
+	</style>
+
+</head>
+<body id="page-body">
+
+	<div class="container-lg">
+		<div class="row" id="card">
+			<div class="col-lg-3 col-md-3 col-sm-3" id="left-bar">
+				<img src="foto currículo1.jpg" alt="foto minha" id="imagem-perfil">
+				<div class="row">
+					<h4 id="meu-nome" style="text-align:center">Contatos:</h4>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<a href="www.linkedin.com/in/alberto-da-rocha-miranda-angrysine" >
+							<img src="linkedin-icon.png" alt="logo linkedin"  id="l1">
+						</a> 
+						<label for="l1">Linkedin</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4"> 
+						<a href="mailto: alberto.miranda@sou.inteli.edu.br">
+							<img src="email.png" alt="logo Email" id="l2">
+						</a>
+						<label for="l2">Email</label>	
+					</div>
+				</div>   		
+				<div class="col-lg-4 col-md-4 col-sm-4"> 
+					<a href="https://github.com/angrysine">
+						<img src="github1.png" alt="logo GitHub" id="l3">
+					</a>
+					<label for="l3">Github</label>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4"> 
+					<a href="tel:(24)9994855666">
+						<img src="telefone.png" alt="telefone" id="l4">
+					</a>
+					<label for="l4">Telefone</label>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4" style="background-color:white;color: black;">
+				<!-- <h4 style="background-color:#8fb8ff ; margin-top: 15px; text-align: center; margin-left: 300px;margin-right: 300px;">ooi</h4> -->
+				<h4 style="background-color:#8fb8ff !important; margin-top: 1rem; text-align: center; margin-left: 2rem;margin-right: 2rem;">sobre</h4>
+				<p style="text-align: center;">Nasci em Petrópolis, em 2002, e estudei até minha adolescência no colégio Ipiranga.Sempre tive muita afinidade pelas ciências exatas principalmente pela parte de matemática. Em 2018,buscando me desafiar intelectualmente, me mudei para o Rio de Janeiro para fazer um curso preparatório de Ime-Ita.Ao receber bolsa integral no Farias Brito , em 2019, me mudei para o Ceara. Fui aprovado no ime e no ita em 2021, porém decidi entrar no Inteli por acreditar no ensino por projetos baseado em experiências de mercado</p>
+
+				<h4 style="background-color:#8fb8ff !important; margin-top: 1rem; text-align: center; margin-left: 2rem;margin-right: 2rem;">formação acadêmica</h4>
+				<ul >
+					<li style="margin-left: 5 rem;">Colégio Ipiranga Pétropolis 2004-2018</li>
+					<li style="margin-left: 5 rem;">Bolsista de 70% Pensi da barra Tijuca 2019</li>
+					<li style="margin-left: 5 rem;">Bolsista integral no Farias Brito 2020</li>
+				</ul>		
+				<h4 style="background-color:#8fb8ff !important; margin-top: 1rem; text-align: center; margin-left: 2rem;margin-right: 2rem;">formação</h4>
+				<ul >
+					<li style="margin-left: 5 rem;">certificado de Proficiency Cambrige</li>
+					<li style="margin-left: 5 rem;">Presidente da Liga de mercado financeiro Inteli</li>
+					<li style="margin-left: 5 rem;">Curso de introdução ao mercado financeira da Poli</li>
+				</ul>		
+				<button class="btn btn-primary center" onclick="oi()">quantos dias faltam para eu me formar</button>
+				<div id="aqui"></div>
+				<button class="btn btn-primary center" onclick="tchau()">meus jogos favoritos</button>
+				<div id="json"></div>
+				
+			</div>
+		</div>
+
+	</div>
+
+	<SCRIPT>
+		let algo = true
+		let algo2 = true
+		var oi= function() {
+			const d = new Date();
+			let ano = d.getFullYear()
+			let mês = d.getMonth()
+			let dia = d.getDate()
+			let anoR = 2025 - ano
+			let mêsR = 11 - mês
+			let diaR = 31 - dia
+			const para = document.createElement("p");
+			let textNode = document.createTextNode(`faltam ${anoR} anos, ${mêsR} meses e ${diaR} dias para eu me graduar`);
+			if (algo) {
+				document.getElementById("aqui").appendChild(textNode);
+				algo =false
+			}}
+				
+			function tchau() {
+				$("#json").html("")
+				$.ajax({
+					url: "http://localhost:3022/jogos",
+					type:"GET",
+					success : function(data) {
+						for (let i=0 ; i <data.length;i++){
+							$("#json").html($("#json").html() + "<p>" + data[i]["nome"] + "</p>" )
+						};
+					}
+				})
+				};
+
+				
+			
+			// const para = document.createElement("p");
+			// let textNode = document.createTextNode(`meus jogos favoritos são ${lista}`);
+			// if (algo2) {
+			// 	document.getElementById("aqui").appendChild(textNode);
+			// 	algo2 =false
+			// }
+		
+		
+		$(document.getElementById("card")).fadeOut("10000").fadeIn("200")
+	</SCRIPT>
+	 
+</body>
+</html>
