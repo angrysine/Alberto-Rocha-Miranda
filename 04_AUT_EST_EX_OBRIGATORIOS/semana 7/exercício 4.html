@@ -6,11 +6,49 @@
     </head>
     
     <body>
-        <label for="select"></label>
+        <label for="select">selecione o período</label>
         <select name="cars" id="select">
             <option value="d">diurno</option>
             <option value="n">noturno</option>
+            </select>
+            <label for="q" id="quant">ensira a quantidade</label>
+            <input type="number" id="q">
+            <button onclick="calcular()">aperte aqui para calcular preço</button>
+            <br>
+            <p>o valor total é:</p>
+            <p id="aqui"></p>
     </body> 
     <script>
+       const select = document.getElementById('select');
+       const quant  = document.getElementById("q");
+       
+
+       function calcular() {
+        var value = select.options[select.selectedIndex].value;
+        if (value =="d") {
+            if (quant.value >= 50) {
+                return texto(String(quant.value*200*0.6))
+            }
+        else {
+            return texto(String(quant.value*200))
+        }
+        }
+        else if (value =="n") {
+            if (quant.value >= 50) {
+                return texto(String(quant.value*100*0.8))
+            }
+        else {
+            return texto(String(quant.value*100))
+        }
+        }
+
+       }
+
+       function texto(texto) {
+         document.getElementById("aqui").innerHTML = texto
+       }
+      
+       var value = select.options[select.selectedIndex].value;
+       
     </script>
 </html>
