@@ -64,7 +64,7 @@
 <body id="page-body">
 
 	<div class="container-lg">
-		<div class="row" id="card">
+		<div class="row justify-content-center" id="card">
 			<div class="col-lg-3 col-md-3 col-sm-3" id="left-bar">
 				<img src="foto currículo1.jpg" alt="foto minha" id="imagem-perfil">
 				<div class="row">
@@ -116,9 +116,8 @@
 					<li style="margin-left: 5 rem;">Presidente da Liga de mercado financeiro Inteli</li>
 					<li style="margin-left: 5 rem;">Curso de introdução ao mercado financeira da Poli</li>
 				</ul>		
-				<button class="btn btn-primary center" onclick="oi()">quantos dias faltam para eu me formar</button>
-				<div id="aqui"></div>
-				<button class="btn btn-primary center" onclick="tchau()">meus jogos favoritos</button>
+				<div id="aqui" style="text-align:center ;"></div>
+				<button class="btn btn-primary center" onclick="tchau()" style="margin-top: 2rem;">click aqui para ver conteúdo apartir da semana 7</button>
 				<div id="json"></div>
 				
 			</div>
@@ -127,9 +126,6 @@
 	</div>
 
 	<SCRIPT>
-		let algo = true
-		let algo2 = true
-		var oi= function() {
 			const d = new Date();
 			let ano = d.getFullYear()
 			let mês = d.getMonth()
@@ -139,22 +135,10 @@
 			let diaR = 31 - dia
 			const para = document.createElement("p");
 			let textNode = document.createTextNode(`faltam ${anoR} anos, ${mêsR} meses e ${diaR} dias para eu me graduar`);
-			if (algo) {
-				document.getElementById("aqui").appendChild(textNode);
-				algo =false
-			}}
+			document.getElementById("aqui").appendChild(textNode);
 				
 			function tchau() {
-				$("#json").html("")
-				$.ajax({
-					url: "http://localhost:3022/jogos",
-					type:"GET",
-					success : function(data) {
-						for (let i=0 ; i <data.length;i++){
-							$("#json").html($("#json").html() + "<p>" + data[i]["nome"] + "</p>" )
-						};
-					}
-				})
+				window.location.href ="file:///C:/Users/Usuario/OneDrive/Documentos/GitHub/Nova%20pasta/Alberto-Rocha-Miranda/03_AUT_EST_ENTREGA/semana%208/frontend/rotas.html"
 				};
 
 				
@@ -165,7 +149,7 @@
 			// 	document.getElementById("aqui").appendChild(textNode);
 			// 	algo2 =false
 			// }
-		
+		$.get()
 		
 		$(document.getElementById("card")).fadeOut("10000").fadeIn("200")
 	</SCRIPT>

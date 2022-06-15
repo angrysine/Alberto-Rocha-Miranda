@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+		.center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		}
+
+		#page-body {
+			background-color:#faf6d0;
+			font-family:Arial, Helvetica, sans-serif;
+		}
+		#imagem-perfil {
+			height: 8rem;
+			width: 	8rem; 
+			margin-top: 2rem;
+			border-radius: 100%;
+			margin-left: 5.2rem;
+		}
+		.label {
+			margin-top: 10px;
+			margin-left: 6.5rem;
+		}
+		
+		#left-bar {
+			background-color:#0b5cb3 ;
+			color: aliceblue;
+		}
+		#card {
+			margin-top:1rem ; 
+			height: 45rem;
+		}
+		#meu-nome {
+			text-align: center;
+			margin-top: 2.5rem;
+		}
+		#l1,#l2,#l3,#l4,#l5 {
+			height:2rem;
+			width:2rem;
+			margin-top: 45px;
+			margin-left: 8.5rem;
+			border-radius:10%
+		}
+		#link1,#link2,#link3,#link4 {
+			color: white;
+		}
+		label {
+			margin-left: 8.2rem;
+		}
+		.ulist {
+			text-align: center;
+			;
+		}
+
+	</style>
+    <title>parte nova do currículo</title>
+</head>
+<body id="page-body">
+
+	<div class="container-lg">
+        <div class="row justify-content-center" id="card" >
+			<div class="col-lg-3" style="background-color: white;padding-top: 2rem;">
+				<button class="btn btn-primary" onclick="getList()" id="btn-lista" style="margin-left: 20%;">lista de jogos que recomendo</button>
+				<ol id="games-list" class="ulist" style="margin-top:  1.5rem;">
+				
+				</ol>
+			</div>
+			<div class="col-lg-5" style="background-color: grey;">
+				<p>adicione um jogo a minha lista de recomendações</p>
+				<form id="add-aqui">
+					<input type="text" id="change-nome">
+					<input type="button" onclick="adicionar()" value="adicionar">
+					<p>remova um jogo da minha lista</p>
+				</form>	
+				<form id="add-aqu2i">
+					<select id="games-id">
+
+					</select>
+					<input type="button" onclick="remover()" value="remover">
+				</form>
+				<form id="add-aqu3i">
+					<select id="games-id2">
+
+					</select>
+					<input type="text" id="new-name" placeholder="insira o novo nome do jogo">
+					<input type="button" onclick="update()" value="update name">
+				</form>
+					
+			</div>
+			</div>
+		</div>
+		
+	</div>
+	<script>
+
+$.ajax({
+    url:"http://localhost:3022/jogos",
+	type: "get",
+	success: function(data) {
+		$("#games-list").html("")
+		data.forEach(element => {
+			let tag = document.createElement("option")
+			let text = document.createTextNode(element.nome)
+			tag.appendChild(text)
+			tag.setAttribute("value",`${element.nome}`)
+			document.getElementById("games-id").appendChild(tag)
+		});
+		data.forEach(element => {
+			let tag = document.createElement("option")
+			let text = document.createTextNode(element.nome)
+			tag.appendChild(text)
+			tag.setAttribute("value",`${element.nome}`)
+			document.getElementById("games-id2").appendChild(tag)
+		});
+	}
+  })
+
+		function getList() {
+  $.ajax({
+    url:"http://localhost:3022/jogos",
+	type: "get",
+	success: function(data) {
+		$("#games-list").html("")
+		data.forEach(element => {
+			let tag = document.createElement("li")
+			let text = document.createTextNode(element.nome)
+			tag.appendChild(text)
+			document.getElementById("games-list").appendChild(tag)
+		});
+	}
+  })
+}
+function adicionar(){
+$.ajax({
+	 url:"http://localhost:3022/jogo",
+	 type: "post",
+	 data: `nome=${$("#change-nome").val()}`,
+	 success: function(data) {
+		$("#add-aqui").append("aperte o botão de ver lista para ver as mudanças aplicadas")
+	 }
+})
+}  
+
+function remover() {
+	$.ajax({
+		url:"http://localhost:3022/jogo",
+		type: "delete",
+		data: `nome=${$("#games-id").val()}`,
+		success:function(data) {
+			console.log($("#games-id").val())
+			$("#add-aqui2").append("aperte o botão de ver lista para ver as mudanças aplicadas")
+		}
+	})
+}
+
+function update() {
+	$.ajax({
+		url:"http://localhost:3022/jogo",
+		type: "put",
+		data: `nome=${$("#games-id2").val()}&nome_new=${$("#new-name").val()}`,
+		success:function(data) {
+			console.log($("#games-id2").val(),$("#new-name").val())
+		}
+	})
+}
+
+
+
+	</script>
+</html>
